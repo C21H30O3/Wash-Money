@@ -41,7 +41,7 @@ exports.ox_target:addModel(atmModels, {
         end,
     }
 })
-exports.ox_target:addModel('s_m_y_winclean_01', {
+exports.ox_target:addModel(Config.PedModel, {
     {
         name = "startwashmoney",
         label = "Wypierz pieniądze",
