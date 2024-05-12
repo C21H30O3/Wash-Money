@@ -39,6 +39,7 @@ exports.ox_target:addModel(atmModels, {
             local distance = Vdist(playerCoords.x, playerCoords.y, playerCoords.z, deliveryCoords.x, deliveryCoords.y, deliveryCoords.z)
             return isWashing and distance < 3.0 
         end,
+      distance = 2.5      
     }
 })
 exports.ox_target:addModel(Config.PedModel, {
@@ -48,12 +49,9 @@ exports.ox_target:addModel(Config.PedModel, {
         icon = "fa-solid fa-washing-machine",
         event = "c21:startwashmoney",
         canInteract = function(entity)
-            local playerPed = PlayerPedId()
-            local playerCoords = GetEntityCoords(playerPed)
-            local pedCoords = GetEntityCoords(entity)
-            local distance = Vdist(playerCoords.x, playerCoords.y, playerCoords.z, pedCoords.x, pedCoords.y, pedCoords.z)
-            return distance < 5.0 and not isWashing
+            return  not isWashing
         end,
+        distance = 2.5    
     },
     {
         name = "finishwashmoney",
@@ -67,6 +65,7 @@ exports.ox_target:addModel(Config.PedModel, {
             local distance = Vdist(playerCoords.x, playerCoords.y, playerCoords.z, pedCoords.x, pedCoords.y, pedCoords.z)
             return distance < 5.0 and isWashing
         end,
+      distance = 2.5      
     },
 })
 
